@@ -9,8 +9,10 @@ import {
   MoreVertical,
   Filter,
   Search,
-  Pin,
+  Lock,
 } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const ThemePreview = () => {
   return (
@@ -19,7 +21,13 @@ const ThemePreview = () => {
       <div className="flex flex-col w-[450px] bg-secondary-dark">
         {/* Top Header */}
         <div className="flex justify-between bg-secondary-light py-2 px-4 items-center">
-          <div className="w-[42px] h-[42px] bg-text rounded-full"></div>
+          <Image
+            className="w-[42px] h-[42px] bg-text rounded-full shrink-0"
+            src="https://picsum.photos/200?random=666"
+            width={42}
+            height={42}
+            alt="You"
+          />
 
           <div className="flex gap-6 text-text-dark [&>*]:cursor-pointer">
             <Group className="hover:text-text-darker" />
@@ -43,20 +51,34 @@ const ThemePreview = () => {
         {/* Chat List */}
         <div className="flex flex-col">
           <ChatItem
-            title="Ahmet"
-            imageUrl=""
+            title="Bro"
+            imageUrl="https://picsum.photos/200?random=1"
             lastMessage="You: We're going to eskişehir!"
             lastMessageDate="23:47"
             highlighted={true}
           />
 
           <ChatItem
-            title="ilyas"
-            imageUrl=""
+            title="Ilyas Ipek"
+            imageUrl="https://picsum.photos/200?random=2"
             lastMessage="You: so when do you wanna meetup?"
             lastMessageDate="13:07"
             highlighted={false}
           />
+
+          <div className="flex gap-1 items-center justify-center w-full text-xs text-text-dark mt-4">
+            <Lock size={16} />
+
+            <span>Your personal messaged are</span>
+
+            <Link
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              className="text-[#00aaff]"
+              target="_blank"
+            >
+              end-to-end encrypted
+            </Link>
+          </div>
         </div>
       </div>
     </div>
@@ -85,13 +107,19 @@ const ChatItem = ({
   return (
     <div
       className={cn(
-        "flex p-4 hover:bg-secondary-light hover:brightness-110 transition-all duration-75 cursor-pointer w-full gap-4",
+        "flex pt-4 pb-0 hover:bg-secondary-light hover:brightness-110 transition-all duration-75 cursor-pointer w-full gap-4",
         highlighted && "brightness-110 bg-secondary-light"
       )}
     >
-      <div className="w-[48px] h-[48px] bg-text rounded-full shrink-0"></div>
+      <Image
+        className="w-[48px] h-[48px] bg-text rounded-full shrink-0 ml-4"
+        src={imageUrl}
+        width={48}
+        height={48}
+        alt={title}
+      />
 
-      <div className="flex justify-between w-full">
+      <div className="flex justify-between w-full pb-4 border-b border-b-secondary-light pr-4">
         <div className="flex flex-col">
           <span className="text-lg">{title}</span>
           <span className="text-sm text-text-dark">{lastMessage}</span>
