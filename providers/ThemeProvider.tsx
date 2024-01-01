@@ -1,6 +1,7 @@
 "use client";
 
-import { Theme, defaultTheme } from "@/lib/types/theme";
+import { premadeThemes } from "@/lib/premade-themes";
+import { Theme } from "@/lib/types/theme";
 import { PropsWithChildren, createContext, useContext, useEffect } from "react";
 
 type ThemeContext = {
@@ -9,7 +10,7 @@ type ThemeContext = {
 };
 
 const themeContext = createContext<ThemeContext>({
-  currentTheme: defaultTheme,
+  currentTheme: premadeThemes["default"],
   setTheme: () => {},
 });
 
@@ -24,13 +25,13 @@ const ThemeProvider = ({ children }: PropsWithChildren) => {
   // set initial default theme on startup
   // TODO: make this eventually set the user's stored theme instead
   useEffect(() => {
-    setTheme(defaultTheme);
+    setTheme(premadeThemes["default"]);
   }, []);
 
   return (
     <themeContext.Provider
       value={{
-        currentTheme: defaultTheme,
+        currentTheme: premadeThemes["default"],
         setTheme,
       }}
     >
