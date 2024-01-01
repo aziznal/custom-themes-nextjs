@@ -3,16 +3,10 @@ import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 export default function Home() {
   return (
-    <div className="flex flex-col lg:flex-row gap-2">
-      {/* Theme Switcher  */}
-      <div>
-        <ThemeSwitcher />
-      </div>
+    <div className="flex flex-col items-center justify-center w-full gap-2">
+      <ThemeSwitcher />
 
-      {/* Theme Preview  */}
-      <div>
-        <ThemePreview />
-      </div>
+      <ThemePreview />
     </div>
   );
 }
