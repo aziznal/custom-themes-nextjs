@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import ThemeProvider from "@/providers/ThemeProvider";
 
 const font = Roboto({
   subsets: ["latin"],
@@ -19,8 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full">
-      <body className={cn("h-full", font.className)}>{children}</body>
-    </html>
+    <ThemeProvider>
+      <html lang="en" className="h-full">
+        <body className={cn("h-full", font.className)}>{children}</body>
+      </html>
+    </ThemeProvider>
   );
 }
