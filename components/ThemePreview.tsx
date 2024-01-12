@@ -39,7 +39,7 @@ const ThemePreview = () => {
       {/* Left Sidebar  */}
       <div className="flex flex-col w-[450px] bg-secondary-dark border-r border-r-secondary-light">
         {/* Top Header */}
-        <div className="flex justify-between bg-secondary-light px-4 items-center h-[64px]">
+        <div className="flex justify-between bg-secondary-light px-4 items-center h-[64px] border-r border-r-secondary">
           <Image
             className="w-[42px] h-[42px] bg-text rounded-full shrink-0"
             src="https://picsum.photos/200?random=666"
