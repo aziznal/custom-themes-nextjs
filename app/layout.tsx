@@ -22,7 +22,9 @@ export default function RootLayout({
   return (
     <ThemeProvider>
       <html lang="en" className="h-full">
-        <body className={cn("h-full", font.className)}>{children}</body>
+        <body className={cn("h-full bg-background", font.className)}>
+          {children}
+        </body>
       </html>
     </ThemeProvider>
   );
