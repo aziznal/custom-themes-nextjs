@@ -13,6 +13,9 @@ import {
   ChevronDown,
   Check,
   CheckCheck,
+  Plus,
+  Smile,
+  Mic,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -333,7 +336,19 @@ const ThemePreview = () => {
               </div>
 
               {/* Input  */}
-              <div className="h-[56px] bg-secondary w-full"></div>
+              <div className="h-[64px] bg-secondary w-full flex items-center">
+                <Plus className="px-6 w-fit shrink-0 text-text-darker" />
+
+                <div className="flex-1 h-[44px] bg-secondary-light brightness-[140%] flex items-center rounded-lg">
+                  <Smile className="text-text-darker ml-4" />
+
+                  <span className="text-text-darker ml-4 text-sm">
+                    Type a message
+                  </span>
+                </div>
+
+                <Mic className="px-6 w-fit shrink-0 text-text-darker" />
+              </div>
             </div>
           </>
         )}
