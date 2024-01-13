@@ -17,5 +17,5 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--secondaryDark);
+  background: rgba(100, 100, 100, 0.7);
 }
