@@ -35,7 +35,7 @@ const ThemePreview = () => {
   const [isChatOpen, setIsChatOpen] = useState(true);
 
   return (
-    <div className="flex h-[950px] text-text w-full px-28 pt-4">
+    <div className="flex h-[900px] text-text w-full px-28 pt-4">
       {/* Left Sidebar  */}
       <div className="flex flex-col w-[450px] bg-secondary-dark border-r border-r-secondary-light">
         {/* Top Header */}
