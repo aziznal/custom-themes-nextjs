@@ -1,12 +1,12 @@
-import ThemePreview from "@/components/ThemePreview";
+import ThemePreviewDesktop from "@/components/ThemePreviewDesktop";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center w-full gap-2">
-      <ThemeSwitcher />
+    <div className="flex items-center w-full gap-2">
+      <ThemePreviewDesktop />
 
-      <ThemePreview />
+      <ThemeSwitcher />
     </div>
   );
 }

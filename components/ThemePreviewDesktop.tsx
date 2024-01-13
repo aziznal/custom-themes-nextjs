@@ -36,13 +36,13 @@ const chatContext = createContext<{
   setIsChatOpen: () => {},
 });
 
-const ThemePreview = () => {
-  const [isChatOpen, setIsChatOpen] = useState(true);
+const ThemePreviewDesktop = () => {
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   return (
-    <div className="flex h-[900px] text-text w-full px-28 pt-4">
+    <div className="flex h-[900px] w-2/3 text-text">
       {/* Left Sidebar  */}
-      <div className="flex flex-col w-[450px] bg-secondary-dark border-r border-r-secondary-light">
+      <div className="flex shrink-0 flex-col w-[450px] bg-secondary-dark border-r border-r-secondary-light">
         {/* Top Header */}
         <div className="flex justify-between bg-secondary-light px-4 items-center h-[64px] border-r border-r-secondary">
           <Image
@@ -88,9 +88,9 @@ const ThemePreview = () => {
             />
 
             <ChatItem
-              title="Ilyas Ipek"
+              title="Cave Johnson"
               imageUrl="https://picsum.photos/200?random=2"
-              lastMessage="You: so when do you wanna meetup?"
+              lastMessage="You: The cake is a lie 🍰"
               lastMessageDate="13:07"
             />
           </chatContext.Provider>
@@ -98,7 +98,7 @@ const ThemePreview = () => {
           <div className="flex gap-1 items-center justify-center w-full text-xs mt-4">
             <Lock size={16} />
 
-            <span>Your personal messaged are</span>
+            <span>Your personal messages are</span>
 
             <Link
               href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
@@ -134,7 +134,7 @@ const ThemePreview = () => {
 
             <div className="absolute bottom-10 flex gap-1 items-center justify-center w-full text-sm text-text-darker mt-4">
               <Lock size={16} />
-              <span>Your personal messaged are end-to-end encrypted</span>
+              <span>Your personal messages are end-to-end encrypted</span>
             </div>
           </div>
         )}
@@ -157,7 +157,7 @@ const ThemePreview = () => {
                 />
 
                 <div className="flex flex-col">
-                  <span>Ilyas Ipek</span>
+                  <span>Cave Johnson</span>
                   <span className="text-sm text-text-darker">
                     last seen today at 13:07
                   </span>
@@ -182,7 +182,7 @@ const ThemePreview = () => {
             />
 
             {/* Messages & Input  */}
-            <div className="w-full flex flex-col flex-1 min-h-0">
+            <div className="w-full flex flex-col min-h-0">
               {/* Messages  */}
               <div className="flex flex-col flex-1 overflow-y-auto gap-1 pb-4 px-14">
                 {/* Date Marker  */}
@@ -357,9 +357,9 @@ const ThemePreview = () => {
   );
 };
 
-ThemePreview.displayName = "ThemePreviewChat";
+ThemePreviewDesktop.displayName = "ThemePreviewChat";
 
-export default ThemePreview;
+export default ThemePreviewDesktop;
 
 type ChatItemProps = {
   imageUrl: string;
