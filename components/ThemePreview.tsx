@@ -11,6 +11,8 @@ import {
   Search,
   Lock,
   ChevronDown,
+  Check,
+  CheckCheck,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -179,28 +181,155 @@ const ThemePreview = () => {
             {/* Messages & Input  */}
             <div className="w-full flex flex-col flex-1 min-h-0">
               {/* Messages  */}
-              <div className="flex flex-col flex-1 overflow-y-auto gap-6">
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
-                <span>foo</span>
+              <div className="flex flex-col flex-1 overflow-y-auto gap-1 pb-4 px-14">
+                {/* Date Marker  */}
+                <div className="text-center px-4 py-2 mt-2 bg-secondary-dark mx-auto w-fit rounded-lg text-sm text-text-darker">
+                  YESTERDAY
+                </div>
+
+                <Message side="right" time="13:07" received={true} read={true}>
+                  Hello World!
+                </Message>
+
+                <Message side="left" time="13:08">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Officiis magni possimus voluptates ea consectetur corrupti
+                  mollitia, vero, quasi pariatur tempora necessitatibus iure
+                  dolor eum sed nisi numquam impedit ut saepe.
+                </Message>
+
+                <Message side="right" time="13:09" received={true} read={false}>
+                  Hello World!
+                </Message>
+
+                <Message
+                  side="right"
+                  time="13:13"
+                  received={false}
+                  read={false}
+                >
+                  Hello World!
+                </Message>
+
+                <Message
+                  side="right"
+                  time="13:15"
+                  received={false}
+                  read={false}
+                >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                  hic esse officiis praesentium rerum maxime nam fugiat dolorum
+                  voluptate at.
+                </Message>
+
+                <div className="text-center px-4 py-2 mt-2 bg-secondary-dark mx-auto w-fit rounded-lg text-sm text-text-darker">
+                  TODAY
+                </div>
+
+                <Message side="right" time="13:07" received={true} read={true}>
+                  Hello World!
+                </Message>
+
+                <Message side="left" time="13:08">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Officiis magni possimus voluptates ea consectetur corrupti
+                  mollitia, vero, quasi pariatur tempora necessitatibus iure
+                  dolor eum sed nisi numquam impedit ut saepe.
+                </Message>
+
+                <Message side="right" time="13:09" received={true} read={false}>
+                  Hello World!
+                </Message>
+
+                <Message
+                  side="right"
+                  time="13:13"
+                  received={false}
+                  read={false}
+                >
+                  Hello World!
+                </Message>
+
+                <Message
+                  side="right"
+                  time="13:15"
+                  received={false}
+                  read={false}
+                >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                  hic esse officiis praesentium rerum maxime nam fugiat dolorum
+                  voluptate at.
+                </Message>
+
+                <Message side="right" time="13:07" received={true} read={true}>
+                  Hello World!
+                </Message>
+
+                <Message side="left" time="13:08">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Officiis magni possimus voluptates ea consectetur corrupti
+                  mollitia, vero, quasi pariatur tempora necessitatibus iure
+                  dolor eum sed nisi numquam impedit ut saepe.
+                </Message>
+
+                <Message side="right" time="13:09" received={true} read={false}>
+                  Hello World!
+                </Message>
+
+                <Message
+                  side="right"
+                  time="13:13"
+                  received={false}
+                  read={false}
+                >
+                  Hello World!
+                </Message>
+
+                <Message
+                  side="right"
+                  time="13:15"
+                  received={false}
+                  read={false}
+                >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                  hic esse officiis praesentium rerum maxime nam fugiat dolorum
+                  voluptate at.
+                </Message>
+
+                <Message side="right" time="13:07" received={true} read={true}>
+                  Hello World!
+                </Message>
+
+                <Message side="left" time="13:08">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Officiis magni possimus voluptates ea consectetur corrupti
+                  mollitia, vero, quasi pariatur tempora necessitatibus iure
+                  dolor eum sed nisi numquam impedit ut saepe.
+                </Message>
+
+                <Message side="right" time="13:09" received={true} read={false}>
+                  Hello World!
+                </Message>
+
+                <Message
+                  side="right"
+                  time="13:13"
+                  received={false}
+                  read={false}
+                >
+                  Hello World!
+                </Message>
+
+                <Message
+                  side="right"
+                  time="13:15"
+                  received={false}
+                  read={false}
+                >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                  hic esse officiis praesentium rerum maxime nam fugiat dolorum
+                  voluptate at.
+                </Message>
               </div>
 
               {/* Input  */}
@@ -274,4 +403,50 @@ const ChatItem = ({
   );
 };
 
-ChatItem.displayName = "ChatItem";
+type MessageProps = {
+  children: React.ReactNode;
+  side: "left" | "right";
+  time: string;
+  received?: boolean;
+  read?: boolean;
+};
+
+export const Message = ({
+  children,
+  side,
+  time,
+  received,
+  read,
+}: MessageProps) => {
+  return (
+    <div
+      className={cn(
+        "relative p-2 pr-16 max-w-[65%] rounded-lg text-sm",
+        side === "left" ? "self-start bg-secondary" : "self-end bg-primary"
+      )}
+    >
+      {children}
+
+      <span
+        className={cn(
+          "absolute text-[11px] text-text-dark",
+          side === "left" ? "right-2 bottom-0" : "right-7 bottom-0"
+        )}
+      >
+        {time}
+      </span>
+
+      {side === "right" && (
+        <span className="absolute bottom-1 right-2">
+          {!received && <Check size={16} className="text-text-dark" />}
+
+          {received && !read && (
+            <CheckCheck size={16} className="text-text-dark" />
+          )}
+
+          {read && <CheckCheck size={16} className="text-messageRead" />}
+        </span>
+      )}
+    </div>
+  );
+};

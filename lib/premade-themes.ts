@@ -16,6 +16,8 @@ export const premadeThemes = {
     textDark: "#aebac1",
     textDarker: "#8696a0",
 
+    messageRead: "#53bdeb",
+
     background: "#0c1317",
-  } as Theme,
+  } satisfies Theme,
 };

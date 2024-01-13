@@ -26,6 +26,9 @@ const config = {
         dark: "var(--textDark)",
         darker: "var(--textDarker)",
       },
+      messageRead: {
+        DEFAULT: "var(--messageRead)",
+      },
       background: {
         DEFAULT: "var(--background)",
       },

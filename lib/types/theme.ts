@@ -13,5 +13,7 @@ export type Theme = {
   textDark: string;
   textDarker: string;
 
+  messageRead: string;
+
   background: string;
 };
