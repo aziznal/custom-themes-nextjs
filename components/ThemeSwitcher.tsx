@@ -4,12 +4,19 @@ import { useThemeContext } from "@/providers/ThemeProvider";
 import { Switch } from "./ui/switch";
 import { useThemeSwitcherStore } from "@/lib/theme-store";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
+import { useEffect, useState } from "react";
 
 const ThemeSwitcher = () => {
   const { setTheme, currentTheme } = useThemeContext();
   const { isTextEnabled } = useThemeSwitcherStore();
 
-  if (!window) {
+  const [isClientLoaded, setIsClientLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsClientLoaded(true);
+  }, []);
+
+  if (!isClientLoaded) {
     return <>Loading</>;
   }
 
