@@ -37,10 +37,10 @@ const chatContext = createContext<{
 });
 
 const ThemePreviewDesktop = () => {
-  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(true);
 
   return (
-    <div className="flex h-[900px] w-2/3 text-text">
+    <div className="flex w-2/3 text-text shrink-0">
       {/* Left Sidebar  */}
       <div className="flex shrink-0 flex-col w-[450px] bg-secondary-dark border-r border-r-secondary-light">
         {/* Top Header */}

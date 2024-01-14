@@ -10,29 +10,6 @@ const config = {
   ],
   prefix: "",
   theme: {
-    colors: {
-      primary: {
-        DEFAULT: "var(--primary)",
-        light: "var(--primaryLight)",
-        dark: "var(--primaryDark)",
-      },
-      secondary: {
-        DEFAULT: "var(--secondary)",
-        light: "var(--secondaryLight)",
-        dark: "var(--secondaryDark)",
-      },
-      text: {
-        DEFAULT: "var(--text)",
-        dark: "var(--textDark)",
-        darker: "var(--textDarker)",
-      },
-      messageRead: {
-        DEFAULT: "var(--messageRead)",
-      },
-      background: {
-        DEFAULT: "var(--background)",
-      },
-    },
     container: {
       center: true,
       padding: "2rem",
@@ -41,6 +18,29 @@ const config = {
       },
     },
     extend: {
+      colors: {
+        primary: {
+          DEFAULT: "var(--primary)",
+          light: "var(--primaryLight)",
+          dark: "var(--primaryDark)",
+        },
+        secondary: {
+          DEFAULT: "var(--secondary)",
+          light: "var(--secondaryLight)",
+          dark: "var(--secondaryDark)",
+        },
+        text: {
+          DEFAULT: "var(--text)",
+          dark: "var(--textDark)",
+          darker: "var(--textDarker)",
+        },
+        messageRead: {
+          DEFAULT: "var(--messageRead)",
+        },
+        background: {
+          DEFAULT: "var(--background)",
+        },
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
