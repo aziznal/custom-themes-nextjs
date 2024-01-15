@@ -5,6 +5,8 @@ import { Switch } from "./ui/switch";
 import { useThemeSwitcherStore } from "@/lib/theme-store";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { useEffect, useState } from "react";
+import { ThemePreview } from "./ThemePreview";
+import { premadeThemes } from "@/lib/premade-themes";
 
 const ThemeSwitcher = () => {
   const { setTheme, currentTheme } = useThemeContext();
@@ -44,13 +46,53 @@ const ThemeSwitcher = () => {
           <TabsTrigger className="w-full" value="saved-themes">
             Saved themes
           </TabsTrigger>
+
           <TabsTrigger className="w-full" value="premade-themes">
             Premade themes
           </TabsTrigger>
         </TabsList>
 
         <TabsContent value="saved-themes" className="mt-6">
-          Pick one of your saved themes or create a new one
+          <span>Pick one of your saved themes or create a new one</span>
+
+          <div className="flex flex-wrap overflow-y-auto mt-6">
+            <ThemePreview
+              theme={{ ...premadeThemes.default }}
+              onClick={() => {}}
+              onDelete={() => {}}
+              isSelected
+            />
+
+            <ThemePreview
+              theme={{ ...premadeThemes.default }}
+              onClick={() => {}}
+              onDelete={() => {}}
+            />
+
+            <ThemePreview
+              theme={{ ...premadeThemes.default }}
+              onClick={() => {}}
+              onDelete={() => {}}
+            />
+
+            <ThemePreview
+              theme={{ ...premadeThemes.default }}
+              onClick={() => {}}
+              onDelete={() => {}}
+            />
+
+            <ThemePreview
+              theme={{ ...premadeThemes.default }}
+              onClick={() => {}}
+              onDelete={() => {}}
+            />
+
+            <ThemePreview
+              theme={{ ...premadeThemes.default }}
+              onClick={() => {}}
+              onDelete={() => {}}
+            />
+          </div>
         </TabsContent>
 
         <TabsContent value="premade-themes" className="mt-6">
