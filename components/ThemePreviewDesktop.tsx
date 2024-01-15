@@ -190,148 +190,120 @@ const ThemePreviewDesktop = () => {
                   YESTERDAY
                 </div>
 
-                <Message side="right" time="13:07" received={true} read={true}>
-                  Hello World!
+                <Message side="left" time="09:00">
+                  Morning, Caroline! Did you see that new perpetual motion
+                  machine prototype?
                 </Message>
 
-                <Message side="left" time="13:08">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Officiis magni possimus voluptates ea consectetur corrupti
-                  mollitia, vero, quasi pariatur tempora necessitatibus iure
-                  dolor eum sed nisi numquam impedit ut saepe.
+                <Message side="right" time="09:01" received={true} read={true}>
+                  Good morning, Mr. Johnson! Yes, I did. It{`'`}s... perpetually
+                  moving.
                 </Message>
 
-                <Message side="right" time="13:09" received={true} read={false}>
-                  Hello World!
+                <Message side="left" time="09:02">
+                  That{`'`}s the spirit! It{`'`}s science – if it{`'`}s not
+                  moving, it{`'`}s probably dead.
                 </Message>
 
-                <Message
-                  side="right"
-                  time="13:13"
-                  received={false}
-                  read={false}
-                >
-                  Hello World!
+                <Message side="left" time="09:02">
+                  Speaking of dead, how{`'`}s that project with the combustible
+                  lemons coming along?
                 </Message>
 
-                <Message
-                  side="right"
-                  time="13:15"
-                  received={false}
-                  read={false}
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-                  hic esse officiis praesentium rerum maxime nam fugiat dolorum
-                  voluptate at.
+                <Message side="right" time="09:03" received={true} read={true}>
+                  We{`'`}re on it, but there{`'`}s a slight issue with the...
+                  combustion part.
                 </Message>
 
-                <div className="text-center px-4 py-2 mt-2 bg-secondary-dark mx-auto w-fit rounded-lg text-sm text-text-darker">
-                  TODAY
-                </div>
-
-                <Message side="right" time="13:07" received={true} read={true}>
-                  Hello World!
+                <Message side="right" time="09:03" received={true} read={true}>
+                  They{`'`}re exploding a bit too... enthusiastically.
                 </Message>
 
-                <Message side="left" time="13:08">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Officiis magni possimus voluptates ea consectetur corrupti
-                  mollitia, vero, quasi pariatur tempora necessitatibus iure
-                  dolor eum sed nisi numquam impedit ut saepe.
+                <Message side="left" time="09:04">
+                  Excellent! If life gives you lemons, make life take the lemons
+                  back!
                 </Message>
 
-                <Message side="right" time="13:09" received={true} read={false}>
-                  Hello World!
+                <Message side="right" time="09:05" received={true} read={true}>
+                  Exactly, sir. Although the lab needs a new coat of paint now.
+                  And possibly a new lab.
                 </Message>
 
-                <Message
-                  side="right"
-                  time="13:13"
-                  received={false}
-                  read={false}
-                >
-                  Hello World!
+                <Message side="left" time="09:06">
+                  A small price to pay for innovation, Caroline! What{`'`}s
+                  science without a few... explosions?
                 </Message>
 
-                <Message
-                  side="right"
-                  time="13:15"
-                  received={false}
-                  read={false}
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-                  hic esse officiis praesentium rerum maxime nam fugiat dolorum
-                  voluptate at.
+                <Message side="left" time="09:06">
+                  Oh, and how{`'`}s our AI project going?
                 </Message>
 
-                <Message side="right" time="13:07" received={true} read={true}>
-                  Hello World!
+                <Message side="right" time="09:07" received={true} read={true}>
+                  Progressing well. The AI can now understand over 50,000 words.
+                  And it made a joke today.
                 </Message>
 
-                <Message side="left" time="13:08">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Officiis magni possimus voluptates ea consectetur corrupti
-                  mollitia, vero, quasi pariatur tempora necessitatibus iure
-                  dolor eum sed nisi numquam impedit ut saepe.
+                <Message side="left" time="09:08">
+                  A joke? Our AI? Do tell!
                 </Message>
 
-                <Message side="right" time="13:09" received={true} read={false}>
-                  Hello World!
+                <Message side="right" time="09:09" received={true} read={true}>
+                  It said, {`'`}I{`'`}m a super intelligent AI, and even I can
+                  {`'`}t solve why humans need sleep.{`'`}
                 </Message>
 
-                <Message
-                  side="right"
-                  time="13:13"
-                  received={false}
-                  read={false}
-                >
-                  Hello World!
+                <Message side="left" time="09:10">
+                  Hah! Sleep, who needs it? We have science to do.
                 </Message>
 
-                <Message
-                  side="right"
-                  time="13:15"
-                  received={false}
-                  read={false}
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-                  hic esse officiis praesentium rerum maxime nam fugiat dolorum
-                  voluptate at.
+                <Message side="left" time="09:11">
+                  Keep up the good work, Caroline. Remember, we do what we must
+                  because we can.
                 </Message>
 
-                <Message side="right" time="13:07" received={true} read={true}>
-                  Hello World!
+                <Message side="right" time="09:12" received={true} read={true}>
+                  For the good of all of us. Except the ones who are dead.
                 </Message>
 
-                <Message side="left" time="13:08">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Officiis magni possimus voluptates ea consectetur corrupti
-                  mollitia, vero, quasi pariatur tempora necessitatibus iure
-                  dolor eum sed nisi numquam impedit ut saepe.
+                <Message side="left" time="09:13">
+                  That{`'`}s the spirit! Now, about those lemons...
                 </Message>
 
-                <Message side="right" time="13:09" received={true} read={false}>
-                  Hello World!
+                <Message side="right" time="09:14" received={true} read={true}>
+                  I{`'`}ll order more fire extinguishers.
                 </Message>
 
-                <Message
-                  side="right"
-                  time="13:13"
-                  received={false}
-                  read={false}
-                >
-                  Hello World!
+                <Message side="left" time="09:15">
+                  Good call. And let{`'`}s get some more of those {`'`}
+                  accident-free{`'`}
+                  signs. We{`'`}re setting a new record soon!
                 </Message>
-
-                <Message
-                  side="right"
-                  time="13:15"
-                  received={false}
-                  read={false}
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-                  hic esse officiis praesentium rerum maxime nam fugiat dolorum
-                  voluptate at.
+                <Message side="right" time="09:16" received={true} read={true}>
+                  Will do, Mr. Johnson. Though, I think we might be interpreting
+                  {`'`}accident-free{`'`} a bit liberally.
+                </Message>
+                <Message side="left" time="09:17">
+                  Caroline, in science, {`'`}liberal interpretation{`'`} is just
+                  another term for {`'`}innovation{`'`}.
+                </Message>
+                <Message side="right" time="09:18" received={true} read={true}>
+                  Of course, sir. Innovation it is!
+                </Message>
+                <Message side="left" time="09:19">
+                  That{`'`}s what I like to hear! Let{`'`}s go make some science
+                  history.
+                </Message>
+                <Message side="right" time="09:20" received={true} read={true}>
+                  Right behind you, sir. With a fire extinguisher. Just in case.
+                </Message>
+                <Message side="left" time="09:21">
+                  Ha! That{`'`}s the Cave Johnson way!
+                </Message>
+                <Message side="right" time="09:22" received={true} read={true}>
+                  Indeed, Mr. Johnson. Have a great day making science!
+                </Message>
+                <Message side="left" time="09:23">
+                  You too, Caroline. You too!
                 </Message>
               </div>
 
@@ -436,7 +408,7 @@ export const Message = ({
   return (
     <div
       className={cn(
-        "relative p-2 pr-16 max-w-[65%] rounded-lg text-sm",
+        "relative p-2 pr-16 max-w-[48%] rounded-lg text-sm",
         side === "left" ? "self-start bg-secondary" : "self-end bg-primary"
       )}
     >
