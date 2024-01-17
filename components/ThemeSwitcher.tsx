@@ -62,7 +62,10 @@ const ThemeSwitcher = () => {
           <span>Pick one of your saved themes or create a new one</span>
         </TabsContent>
 
-        <TabsContent value="premade-themes" className="mt-6 min-h-0 flex flex-col">
+        <TabsContent
+          value="premade-themes"
+          className="mt-6 min-h-0 flex flex-col"
+        >
           <span>Pick a premade theme</span>
 
           <div className="flex flex-wrap mt-6 overflow-y-auto min-h-0">

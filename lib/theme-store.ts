@@ -14,7 +14,7 @@ interface ThemeSwitcherStore {
 export const useThemeSwitcherStore = create(
   persist<ThemeSwitcherStore>(
     (set, get) => ({
-      isTextEnabled: false,
+      isTextEnabled: true,
 
       themes: [],
 
