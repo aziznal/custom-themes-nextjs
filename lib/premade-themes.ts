@@ -86,3 +86,9 @@ export const premadeThemes: PremadeThemes = {
 export function getPremadeThemes(): Theme[] {
   return Object.values(premadeThemes);
 }
+
+export function getThemeKeyByName(name: string): string | undefined {
+  return Object.entries(premadeThemes).find(
+    ([key, theme]) => theme.name === name
+  )?.[0];
+}

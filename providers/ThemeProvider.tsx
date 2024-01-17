@@ -1,10 +1,12 @@
 "use client";
 
-import { premadeThemes } from "@/lib/premade-themes";
+import { getThemeKeyByName, premadeThemes } from "@/lib/premade-themes";
 import { Theme } from "@/lib/types/theme";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
 import {
   PropsWithChildren,
   createContext,
+  useCallback,
   useContext,
   useEffect,
   useState,
@@ -16,28 +18,46 @@ type ThemeContext = {
 };
 
 const themeContext = createContext<ThemeContext>({
-  currentTheme: premadeThemes["newTheme"],
+  currentTheme: premadeThemes["default"],
   setTheme: () => {},
 });
 
 const ThemeProvider = ({ children }: PropsWithChildren) => {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const currentThemeName = searchParams.get("theme");
+
   const [currentTheme, setCurrentTheme] = useState<Theme>(
     premadeThemes["default"]
   );
 
-  const setTheme = (theme: Theme) => {
-    setCurrentTheme(theme);
-    Object.entries(theme).forEach(([key, value]) => {
-      console.log(`Setting ${key} to ${value}`);
-      document.documentElement.style.setProperty(`--${key}`, value);
-    });
-  };
+  const setTheme = useCallback(
+    (theme: Theme) => {
+      setCurrentTheme(theme);
+      router.replace(`?theme=${getThemeKeyByName(theme.name)}`);
+
+      Object.entries(theme).forEach(([key, value]) => {
+        document.documentElement.style.setProperty(`--${key}`, value);
+      });
+    },
+    [router]
+  );
 
   // set initial default theme on startup
   // TODO: make this eventually set the user's stored theme instead
   useEffect(() => {
-    setTheme(premadeThemes["newTheme"]);
-  }, []);
+    if (!currentThemeName) {
+      return;
+    }
+
+    try {
+      setTheme(premadeThemes[currentThemeName]);
+    } catch (e: unknown) {
+      console.log(`Failed to set theme ${currentThemeName}, ${e}`);
+      setTheme(premadeThemes["default"]);
+    }
+  }, [currentThemeName, setTheme]);
 
   return (
     <themeContext.Provider

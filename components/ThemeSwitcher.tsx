@@ -23,7 +23,7 @@ const ThemeSwitcher = () => {
   }
 
   return (
-    <div className="bg-white rounded-lg p-6 w-full overflow-y-hidden flex flex-col">
+    <div className="bg-white rounded-lg p-6 w-full overflow-y-hidden flex flex-col border mr-3">
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold">Theme Manager</h1>
 
@@ -62,7 +62,7 @@ const ThemeSwitcher = () => {
           <span>Pick one of your saved themes or create a new one</span>
         </TabsContent>
 
-        <TabsContent value="premade-themes" className="mt-6">
+        <TabsContent value="premade-themes" className="mt-6 min-h-0 flex flex-col">
           <span>Pick a premade theme</span>
 
           <div className="flex flex-wrap mt-6 overflow-y-auto min-h-0">
