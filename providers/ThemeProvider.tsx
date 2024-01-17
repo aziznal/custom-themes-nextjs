@@ -45,9 +45,9 @@ const ThemeProvider = ({ children }: PropsWithChildren) => {
   );
 
   // set initial default theme on startup
-  // TODO: make this eventually set the user's stored theme instead
   useEffect(() => {
     if (!currentThemeName) {
+      setTheme(premadeThemes["default"]);
       return;
     }
 
