@@ -73,7 +73,7 @@ const ThemePreviewDesktop = () => {
         </div>
 
         {/* Chat List */}
-        <div className="flex flex-col">
+        <div className="flex flex-col overflow-y-auto pb-12">
           <chatContext.Provider
             value={{
               isChatOpen,
@@ -143,7 +143,7 @@ const ThemePreviewDesktop = () => {
           <>
             <div
               className={cn(
-                "flex justify-between bg-secondary-light py-2 px-4 items-center h-[64px] w-full",
+                "flex justify-between bg-secondary-light py-2 px-4 items-center h-[64px] shrink-0 w-full",
                 !isChatOpen && "flex-1"
               )}
             >
@@ -158,6 +158,7 @@ const ThemePreviewDesktop = () => {
 
                 <div className="flex flex-col">
                   <span>Cave Johnson</span>
+
                   <span className="text-sm text-text-darker">
                     last seen today at 13:07
                   </span>
@@ -408,7 +409,7 @@ export const Message = ({
   return (
     <div
       className={cn(
-        "relative p-2 pr-16 max-w-[48%] rounded-lg text-sm",
+        "relative p-2 pr-16 max-w-[48%] rounded-lg text-sm min-h-fit",
         side === "left" ? "self-start bg-secondary" : "self-end bg-primary"
       )}
     >

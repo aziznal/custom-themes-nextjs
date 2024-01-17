@@ -6,7 +6,7 @@ import { useThemeSwitcherStore } from "@/lib/theme-store";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import { useEffect, useState } from "react";
 import { ThemePreview } from "./ThemePreview";
-import { premadeThemes } from "@/lib/premade-themes";
+import { getPremadeThemes } from "@/lib/premade-themes";
 
 const ThemeSwitcher = () => {
   const { setTheme, currentTheme } = useThemeContext();
@@ -23,7 +23,7 @@ const ThemeSwitcher = () => {
   }
 
   return (
-    <div className="bg-white rounded-lg p-6 w-full">
+    <div className="bg-white rounded-lg p-6 w-full overflow-y-hidden flex flex-col">
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-bold">Theme Manager</h1>
 
@@ -41,62 +41,43 @@ const ThemeSwitcher = () => {
         </div>
       </div>
 
-      <Tabs defaultValue="saved-themes" className="mt-6">
+      <Tabs
+        defaultValue="premade-themes"
+        className="mt-6 flex flex-col max-h-full min-h-0"
+      >
         <TabsList className="w-full">
-          <TabsTrigger className="w-full" value="saved-themes">
-            Saved themes
-          </TabsTrigger>
-
           <TabsTrigger className="w-full" value="premade-themes">
             Premade themes
           </TabsTrigger>
+
+          <TabsTrigger className="w-full" value="saved-themes">
+            Saved themes
+          </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="saved-themes" className="mt-6">
+        <TabsContent
+          value="saved-themes"
+          className="mt-6 flex flex-col min-h-0"
+        >
           <span>Pick one of your saved themes or create a new one</span>
-
-          <div className="flex flex-wrap overflow-y-auto mt-6">
-            <ThemePreview
-              theme={{ ...premadeThemes.default }}
-              onClick={() => {}}
-              onDelete={() => {}}
-              isSelected
-            />
-
-            <ThemePreview
-              theme={{ ...premadeThemes.default }}
-              onClick={() => {}}
-              onDelete={() => {}}
-            />
-
-            <ThemePreview
-              theme={{ ...premadeThemes.default }}
-              onClick={() => {}}
-              onDelete={() => {}}
-            />
-
-            <ThemePreview
-              theme={{ ...premadeThemes.default }}
-              onClick={() => {}}
-              onDelete={() => {}}
-            />
-
-            <ThemePreview
-              theme={{ ...premadeThemes.default }}
-              onClick={() => {}}
-              onDelete={() => {}}
-            />
-
-            <ThemePreview
-              theme={{ ...premadeThemes.default }}
-              onClick={() => {}}
-              onDelete={() => {}}
-            />
-          </div>
         </TabsContent>
 
         <TabsContent value="premade-themes" className="mt-6">
-          Pick a premade theme
+          <span>Pick a premade theme</span>
+
+          <div className="flex flex-wrap mt-6 overflow-y-auto min-h-0">
+            {getPremadeThemes().map((theme) => (
+              <ThemePreview
+                key={theme.name}
+                theme={{ ...theme }}
+                onClick={() => {
+                  setTheme(theme);
+                }}
+                onDelete={() => {}}
+                isSelected={currentTheme.name === theme.name}
+              />
+            ))}
+          </div>
         </TabsContent>
       </Tabs>
     </div>

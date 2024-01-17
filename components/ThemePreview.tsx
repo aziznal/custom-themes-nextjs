@@ -2,7 +2,7 @@
 
 import { useThemeSwitcherStore } from "@/lib/theme-store";
 import { Theme } from "@/lib/types/theme";
-import { cn } from "@/lib/utils";
+import { cn, getOppositeHexColor } from "@/lib/utils";
 import { CheckCheck } from "lucide-react";
 
 type ThemePreview = {
@@ -17,22 +17,28 @@ export function ThemePreview(props: ThemePreview) {
   const { isTextEnabled } = useThemeSwitcherStore();
 
   return (
-    <div className="hover:bg-slate-300 p-2 rounded-2xl transition-all">
+    <div
+      className="hover:bg-slate-300 p-2 rounded-2xl transition-all w-fit cursor-pointer"
+      onClick={props.onClick}
+    >
       <div
         className={cn(
-          "flex flex-col items-center justify-center rounded-2xl p-2 w-[170px] gap-2 cursor-pointer",
+          "flex flex-col items-center justify-center rounded-2xl p-2 w-[170px] gap-2 border transition-all duration-100",
           props.isSelected && "border-[4px] border-blue-500"
         )}
         style={{
           backgroundColor: props.theme.background,
-          color: props.theme.text,
+          color: getOppositeHexColor(props.theme.background),
         }}
       >
         {/* Primary */}
         <div className="relative w-full">
           <div
             className="w-[100px] aspect-square rounded-xl flex flex-col text-center items-center justify-center"
-            style={{ backgroundColor: props.theme.primary }}
+            style={{
+              backgroundColor: props.theme.primary,
+              color: getOppositeHexColor(props.theme.primary),
+            }}
           >
             {isTextEnabled && <span>Primary</span>}
 
@@ -48,6 +54,7 @@ export function ThemePreview(props: ThemePreview) {
             className="absolute top-0 right-0 w-[51px] aspect-square rounded-xl flex flex-col text-center items-center justify-center"
             style={{
               backgroundColor: props.theme.primaryDark,
+              color: getOppositeHexColor(props.theme.primaryDark),
             }}
           >
             {isTextEnabled && <span className="text-xs opacity-50">dark</span>}
@@ -64,6 +71,7 @@ export function ThemePreview(props: ThemePreview) {
             className="absolute bottom-0 right-0 w-[51px] aspect-square rounded-xl flex flex-col text-center items-center justify-center"
             style={{
               backgroundColor: props.theme.primaryLight,
+              color: getOppositeHexColor(props.theme.primaryLight),
             }}
           >
             {isTextEnabled && <span className="text-xs opacity-50">light</span>}
@@ -80,7 +88,10 @@ export function ThemePreview(props: ThemePreview) {
         <div className="relative w-full">
           <div
             className="w-[100px] aspect-square rounded-xl flex flex-col text-center items-center justify-center"
-            style={{ backgroundColor: props.theme.secondary }}
+            style={{
+              backgroundColor: props.theme.secondary,
+              color: getOppositeHexColor(props.theme.secondary),
+            }}
           >
             {isTextEnabled && <span>Secondary</span>}
 
@@ -96,6 +107,7 @@ export function ThemePreview(props: ThemePreview) {
             className="absolute top-0 right-0 w-[51px] aspect-square rounded-xl flex flex-col text-center items-center justify-center"
             style={{
               backgroundColor: props.theme.secondaryDark,
+              color: getOppositeHexColor(props.theme.secondaryDark),
             }}
           >
             {isTextEnabled && <span className="text-xs opacity-50">dark</span>}
@@ -112,6 +124,7 @@ export function ThemePreview(props: ThemePreview) {
             className="absolute bottom-0 right-0 w-[51px] aspect-square rounded-xl flex flex-col text-center items-center justify-center"
             style={{
               backgroundColor: props.theme.secondaryLight,
+              color: getOppositeHexColor(props.theme.secondaryLight),
             }}
           >
             {isTextEnabled && <span className="text-xs opacity-50">light</span>}
