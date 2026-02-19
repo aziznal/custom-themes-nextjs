@@ -2,7 +2,7 @@
 
 import { getThemeKeyByName, premadeThemes } from "@/lib/premade-themes";
 import { Theme } from "@/lib/types/theme";
-import { useParams, useRouter, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import {
   PropsWithChildren,
   createContext,
@@ -29,7 +29,7 @@ const ThemeProvider = ({ children }: PropsWithChildren) => {
   const currentThemeName = searchParams.get("theme");
 
   const [currentTheme, setCurrentTheme] = useState<Theme>(
-    premadeThemes["default"]
+    premadeThemes["default"],
   );
 
   const setTheme = useCallback(
@@ -41,7 +41,7 @@ const ThemeProvider = ({ children }: PropsWithChildren) => {
         document.documentElement.style.setProperty(`--${key}`, value);
       });
     },
-    [router]
+    [router],
   );
 
   // set initial default theme on startup

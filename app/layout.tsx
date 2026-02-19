@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import ThemeProvider from "@/providers/ThemeProvider";
+import { Suspense } from "react";
 
 const font = Roboto({
   subsets: ["latin"],
@@ -20,12 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ThemeProvider>
-      <html lang="en" className="h-full">
-        <body className={cn("h-full bg-background", font.className)}>
-          {children}
-        </body>
-      </html>
-    </ThemeProvider>
+    <Suspense fallback={<div>Loading</div>}>
+      <ThemeProvider>
+        <html lang="en" className="h-full">
+          <body className={cn("h-full bg-background", font.className)}>
+            {children}
+          </body>
+        </html>
+      </ThemeProvider>
+    </Suspense>
   );
 }
